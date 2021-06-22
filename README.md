@@ -26,4 +26,4 @@ We are grateful to Huawei's 2012 Labs for providing us with technical support an
 
 2. Attribute the data as the "Wireless Signal Strength on 2.4GHz dataset" or "WSS24" for short, and the url: https://github.com/Vincces/Wireless-Signal-Strength-on-2.4GHz-WSS24-dataset.  
 
-3. For publications that use the data, please cite the following publication: "xxx"
+3. For publications that use the data, please cite the following publication: "https://arxiv.org/pdf/2106.10307.pdf"
