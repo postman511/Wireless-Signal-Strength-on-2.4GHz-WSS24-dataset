@@ -6,21 +6,23 @@
 
 ​    We conducted data sampling at two different indoor scenarios, i.e., our Lab at Shenzhen University and the check-in hall at the terminal 4 of Shenzhen Bao’an International Airport. Fig. 1 and 2 show the layouts of the two wireless sampling scenarios, respectively. In our Lab, there are 12 APs and 8 BT/BLE devices deployed and we used BV1 to sample RSSI at the sensor position, as shown in Fig. 1. At the airport terminal hall, we directly sampled RSSI at 5 locations, i.e., check-in counters B, D, E, G, and the lounge, as shown in Fig. 2. Note that, when we used BV1 to sample the raw RSSI data on the 2.4GHz frequency band at the airport, the collected raw data will include all potential signals from the wireless networks working on this band at the airport. Fig. 3 presents our sampling equipment. The sampled raw data are saved as CSV files that can be downloaded from the project page at GitHub.
 
-- `<div align=center><img src="picture/location-lab.png" /></div>`
+<div align=center><img src="picture/location-lab.png" /></div>
 
-![avatar](picture/location-lab.png)
 
 <p align="center">
 Fig. 1 The layout of our Lab at Shenzhen University
 </p>
 
-![avatar](picture/airport.png)
+
+<div align=center><img src="picture/airport.png" /></div>
 
 <p align="center">
     Fig. 2 The layout of the check-in hall of Shenzhen Baoan International Airport
 </p>
 
-![avatar](picture/device.png)
+
+<div align=center><img src="picture/device.png" /></div>
+
 
 <p align="center">
     Fig. 3 Photograph of sampling equipment
@@ -30,15 +32,16 @@ Fig. 1 The layout of our Lab at Shenzhen University
 
 ​    We provide here as an example of how we process the sampled raw RSSI data. The available 2.4GHz frequency band used by 802.11 Wi-Fi networks in most parts of the world is from 2.401GHz to 2.483GHz, which can be divided into N = 83 sub-bands each with a bandwidth of 1MHz. We denote the *n-*th 1MHz sub-band by
 
-![avatar](picture/1.png)
+<div align=center><img src="picture/1.png" /></div>
+
 
 ​    We can collect the raw data by sampling the RSSI on each sub-band with an equal sampling interval for a certain sampling duration. When we sample the RSSI on each of the sub-bands, we set the sampling interval to T<sub>s</sub> = 100µs for a sampling duration that consists of *L* RSSI samples. The all data of the sampled raw RSSI on N sub-bands can be collected into the following raw RSSI matrix:
 
-![avatar](picture/2.png)
+<div align=center><img src="picture/2.png" /></div>
 
 where RSSI<sub>f<sub>n</sub>, t<sub>e</sub></sub>is the (*n,e*)-th entry of the raw RSSI matrix, f<sub>0</sub> is the sampling starting time,   $t_e = t_0 + T_sk, k = 0,1, \cdots , L$ is the *e-*th sampling time, and  $f_i$ represents the *i*-th sub-band. Fig. 4 presents the measured RSSI in 0.1 second at Shenzhen Baoan International Airport.
 
-![avatar](picture/rssi.png)
+<div align=center><img src="picture/rssi.png" /></div>
 
 <p align="center">
     Fig. 4 The measured RSSI in 0.1 second at Shenzhen Baoan International Airport
@@ -51,15 +54,17 @@ where RSSI<sub>f<sub>n</sub>, t<sub>e</sub></sub>is the (*n,e*)-th entry of the 
 
 ​    First, we deal with the RSSI samples in the time domain. The time length of one RSSI sample is T<sub>s</sub> = 100µs, but the time length of one mini-slot in the CSMA/CA protocol of Wi-Fi networks is T<sub>slot</sub> = 100µs. To align with the time units of CSMA/CA and our data, we perform up-sampling via the linear interpolation with an up-sampling factor T<sub>s</sub>/T<sub>slot</sub> ≈ 11. In particular, the RSSI interpolation on sub-band $f_n$ given by
 
-![avatar](picture/3.png)
+<div align=center><img src="picture/3.png" /></div>
 
 where t' is the time index of the interpolated RSSI between the RSSI samples at time f<sub>e</sub> and f<sub>e+1</sub>, and RSSI'<sub>f<sub>n</sub>,t'</sub> is the result of interpolation at t' on sub-band f<sub>n</sub>.
 
 ​    After the time-domain data processing, we also have frequency-domain data processing. There are 14 overlapping and staggered channels on the 2.4GHz frequency band, and the first 13 channels are widely used in most parts of the world. Therefore, we only consider the first 13 channels in dataset. Similarly, we need to interpolate RSSI values on sub-bands into the M = 13 Wi-Fi channels, as shown in Fig. 5. The m-th channel’s center frequency of Wi-Fi networks can be written as
 
-![avatar](picture/4.png)
+<div align=center><img src="picture/4.png" /></div>
 
-![avatar](picture/channel13.png)
+
+<div align=center><img src="picture/channel13.png" /></div>
+
 
 <p align="center">
     Fig. 5 The illustration of interpolating RSSI values o the 83sub-bands into the 13 Wi-Fi channels.
@@ -67,48 +72,52 @@ where t' is the time index of the interpolated RSSI between the RSSI samples at 
 
 ​    We perform down-sampling via average interpolation with a down-sampling factor of 23. Consider channel 6 as an example. The 2.437GHz is the center frequency of channel 6 that occupies the 23 sub-bands from 2.426GHz to 2.448GHz (f<sub>25</sub>,· · · , f<sub>47</sub>). We calculate the average of the RSSI values sampled from these 23 sub-bands as the interpolated RSSI value of channel 1. In particular, we can express the interpolated RSSI of channel *m* at time t<sub>e</sub> as
 
-![avatar](picture/5.png)
+<div align=center><img src="picture/5.png" /></div>
+
 
 ​    Finally, the RSSI matrix obtained after the time and frequency domain processing is shown below:
 
-![avatar](picture/6.png)
+<div align=center><img src="picture/6.png" /></div>
+
 
 ## Spectrum Data Set Analysis
 
 ### Heap Map
 ​    After processing the data, we obtained a two-dimensional RSSI matrix given by (6) for each sampling locations. We now have 6 RSSI matrices that contain the data sampled at the counter B, D, E, G, and the Lounge of airport check in hall, the data sampled at our Lab. In order to visually understand the data, we display the data in the form of heat maps. The head maps of the 6 RSSI matrices are given in Fig 6-11, where the vertical direction represents the Wi-Fi channels, the horizontal direction represents the time (we only shows the data within a 1 second time window). 
 
-![avatar](picture/B.png)
+<div align=center><img src="picture/B.png" /></div>
 
 <p align="center">
       Fig. 6 The RSSI heat map of data sampled at counter B of the airport
   </p>
 
-![avatar](picture/D.png)
+<div align=center><img src="picture/D.png" /></div>
+
 
 <p align="center">
       Fig. 7 The RSSI heat map of data sampled at counter D of the airport
   </p>
 
-![avatar](picture/E.png)
+<div align=center><img src="picture/E.png" /></div>
 
 <p align="center">
       Fig. 8 The RSSI heat map of data sampled at counter E of the airport
   </p>										
 
-![avatar](picture/G.png)
+<div align=center><img src="picture/G.png" /></div>
 
 <p align="center">
     Fig. 9 The RSSI heat map of data sampled at counter G of the airport
   </p>
 
-![avatar](picture/Lounge.png)
+<div align=center><img src="picture/Lounge.png" /></div>
 
 <p align="center">
       Fig. 10 The RSSI heat map of data sampled at VIP Lounge of the airport
   </p>
 
-![avatar](picture/Lab.png)
+<div align=center><img src="picture/Lab.png" /></div>
+
 
 <p align="center">
       Fig. 11 The RSSI heat map of data sampled at Laboratory
