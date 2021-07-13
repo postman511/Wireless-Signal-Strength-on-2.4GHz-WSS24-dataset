@@ -146,6 +146,7 @@ where t' is the time index of the interpolated RSSI between the RSSI samples at 
 Jiantao Xin<sup>1</sup>, Wensen Xu<sup>1</sup>, Yucheng Cai<sup>1</sup>, Taotao Wang<sup>1</sup>, Shengli Zhang<sup>1</sup>, Peng Liu<sup>2</sup>, Ziyang Guo<sup>2</sup>, Jiajun Luo<sup>2</sup>
 
 <sup>1</sup>College of Electronics and Information Engineering, Shenzhen University, Shenzhen, China
+
 <sup>2</sup>Wireless Technology Lab, 2012 Laboratories, Huawei, China.  
 
 ## Contact Us
