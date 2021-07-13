@@ -6,6 +6,8 @@
 
 ​    We conducted data sampling at two different indoor scenarios, i.e., our Lab at Shenzhen University and the check-in hall at the terminal 4 of Shenzhen Bao’an International Airport. Fig. 1 and 2 show the layouts of the two wireless sampling scenarios, respectively. In our Lab, there are 12 APs and 8 BT/BLE devices deployed and we used BV1 to sample RSSI at the sensor position, as shown in Fig. 1. At the airport terminal hall, we directly sampled RSSI at 5 locations, i.e., check-in counters B, D, E, G, and the lounge, as shown in Fig. 2. Note that, when we used BV1 to sample the raw RSSI data on the 2.4GHz frequency band at the airport, the collected raw data will include all potential signals from the wireless networks working on this band at the airport. Fig. 3 presents our sampling equipment. The sampled raw data are saved as CSV files that can be downloaded from the project page at GitHub.
 
+- `<div align=center><img src="picture/location-lab.png" /></div>`
+
 ![avatar](picture/location-lab.png)
 
 <p align="center">
