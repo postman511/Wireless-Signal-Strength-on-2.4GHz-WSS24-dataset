@@ -39,7 +39,7 @@ Fig. 1 The layout of our Lab at Shenzhen University
 
 <div align=center><img src="picture/2.png" /></div>
 
-where RSSI<sub>f<sub>n</sub>, t<sub>e</sub></sub>is the (*n,e*)-th entry of the raw RSSI matrix, f<sub>0</sub> is the sampling starting time,   t<sub>e</sub> = t<sub>0</sub> + t<sub>s</sub>k, k = 0,1, ... , L is the e-th sampling time, and  f<sub>i</sub> represents the *i*-th sub-band. Fig. 4 presents the measured RSSI in 0.1 second at Shenzhen Baoan International Airport.
+where RSSI<sub>f<sub>n</sub>, t<sub>e</sub></sub>is the (*n,e*)-th entry of the raw RSSI matrix, f<sub>0</sub> is the sampling starting time,   t<sub>e</sub> = t<sub>0</sub> + T<sub>s</sub>k, k = 0,1, ... , L is the e-th sampling time, and  f<sub>i</sub> represents the *i*-th sub-band. Fig. 4 presents the measured RSSI in 0.1 second at Shenzhen Baoan International Airport.
 
 <div align=center><img src="picture/rssi.png" /></div>
 
