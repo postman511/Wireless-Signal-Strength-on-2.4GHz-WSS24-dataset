@@ -30,16 +30,16 @@ Fig. 1 The layout of our Lab at Shenzhen University
 
 ## Data Set Format
 
-​    We provide here as an example of how we process the sampled raw RSSI data. The available 2.4GHz frequency band used by 802.11 Wi-Fi networks in most parts of the world is from 2.401GHz to 2.483GHz, which can be divided into N = 83 sub-bands each with a bandwidth of 1MHz. We denote the *n-*th 1MHz sub-band by
+​    We provide here as an example of how we process the sampled raw RSSI data. The available 2.4GHz frequency band used by 802.11 Wi-Fi networks in most parts of the world is from 2.401GHz to 2.483GHz, which can be divided into N = 83 sub-bands each with a bandwidth of 1MHz. We denote the n-th 1MHz sub-band by
 
 <div align=center><img src="picture/1.png" /></div>
 
 
-​    We can collect the raw data by sampling the RSSI on each sub-band with an equal sampling interval for a certain sampling duration. When we sample the RSSI on each of the sub-bands, we set the sampling interval to T<sub>s</sub> = 100µs for a sampling duration that consists of *L* RSSI samples. The all data of the sampled raw RSSI on N sub-bands can be collected into the following raw RSSI matrix:
+​    We can collect the raw data by sampling the RSSI on each sub-band with an equal sampling interval for a certain sampling duration. When we sample the RSSI on each of the sub-bands, we set the sampling interval to T<sub>s</sub> = 100µs for a sampling duration that consists of L RSSI samples. The all data of the sampled raw RSSI on N sub-bands can be collected into the following raw RSSI matrix:
 
 <div align=center><img src="picture/2.png" /></div>
 
-where RSSI<sub>f<sub>n</sub>, t<sub>e</sub></sub>is the (*n,e*)-th entry of the raw RSSI matrix, f<sub>0</sub> is the sampling starting time,   $t_e = t_0 + T_sk, k = 0,1, \cdots , L$ is the *e-*th sampling time, and  $f_i$ represents the *i*-th sub-band. Fig. 4 presents the measured RSSI in 0.1 second at Shenzhen Baoan International Airport.
+where RSSI<sub>f<sub>n</sub>, t<sub>e</sub></sub>is the (*n,e*)-th entry of the raw RSSI matrix, f<sub>0</sub> is the sampling starting time,   t<sub>e</sub> = t<sub>0</sub> + t<sub>s</sub>k, k = 0,1, ... , L is the e-th sampling time, and  f<sub>i</sub> represents the *i*-th sub-band. Fig. 4 presents the measured RSSI in 0.1 second at Shenzhen Baoan International Airport.
 
 <div align=center><img src="picture/rssi.png" /></div>
 
@@ -52,7 +52,7 @@ where RSSI<sub>f<sub>n</sub>, t<sub>e</sub></sub>is the (*n,e*)-th entry of the 
 
 ​    The raw data contains a very large amount of channel information, but in order to use the data in a more targeted way, we need to process the data.
 
-​    First, we deal with the RSSI samples in the time domain. The time length of one RSSI sample is T<sub>s</sub> = 100µs, but the time length of one mini-slot in the CSMA/CA protocol of Wi-Fi networks is T<sub>slot</sub> = 100µs. To align with the time units of CSMA/CA and our data, we perform up-sampling via the linear interpolation with an up-sampling factor T<sub>s</sub>/T<sub>slot</sub> ≈ 11. In particular, the RSSI interpolation on sub-band $f_n$ given by
+​    First, we deal with the RSSI samples in the time domain. The time length of one RSSI sample is T<sub>s</sub> = 100µs, but the time length of one mini-slot in the CSMA/CA protocol of Wi-Fi networks is T<sub>slot</sub> = 100µs. To align with the time units of CSMA/CA and our data, we perform up-sampling via the linear interpolation with an up-sampling factor T<sub>s</sub>/T<sub>slot</sub> ≈ 11. In particular, the RSSI interpolation on sub-band f<sub>n</sub> given by
 
 <div align=center><img src="picture/3.png" /></div>
 
@@ -70,7 +70,7 @@ where t' is the time index of the interpolated RSSI between the RSSI samples at 
     Fig. 5 The illustration of interpolating RSSI values o the 83sub-bands into the 13 Wi-Fi channels.
 </p>
 
-​    We perform down-sampling via average interpolation with a down-sampling factor of 23. Consider channel 6 as an example. The 2.437GHz is the center frequency of channel 6 that occupies the 23 sub-bands from 2.426GHz to 2.448GHz (f<sub>25</sub>,· · · , f<sub>47</sub>). We calculate the average of the RSSI values sampled from these 23 sub-bands as the interpolated RSSI value of channel 1. In particular, we can express the interpolated RSSI of channel *m* at time t<sub>e</sub> as
+​    We perform down-sampling via average interpolation with a down-sampling factor of 23. Consider channel 6 as an example. The 2.437GHz is the center frequency of channel 6 that occupies the 23 sub-bands from 2.426GHz to 2.448GHz (f<sub>25</sub>,· · · , f<sub>47</sub>). We calculate the average of the RSSI values sampled from these 23 sub-bands as the interpolated RSSI value of channel 1. In particular, we can express the interpolated RSSI of channel m at time t<sub>e</sub> as
 
 <div align=center><img src="picture/5.png" /></div>
 
