@@ -17,16 +17,17 @@ Fig. 1 The layout of our Lab at Shenzhen University
 <div align=center><img src="picture/airport.png" /></div>
 
 <p align="center">
-    Fig. 2 The layout of the check-in hall of Shenzhen Baoan International Airport
+    Fig. 2 The layout of the check-in hall at Shenzhen Baoan International Airport
 </p>
 
 
-<div align=center><img src="picture/device.png" /></div>
 
+<div align=center><img src="picture/device.png"  /></div>
 
 <p align="center">
-    Fig. 3 Photograph of sampling equipment
+    Fig. 3 Photograph of the used sampling equipment
 </p>
+
 
 ## Data Set Format
 
