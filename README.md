@@ -143,8 +143,7 @@ More than our own work, we are excited about *others* using our dataset for scie
 
 ## Project Team
 
-Jiantao Xin<sup>1</sup>, Wensen Xu<sup>1</sup>, Yucheng Cai<sup>1</sup>, Taotao Wang<sup>1</sup>, Shengli Zhang<sup>1</sup>
-<sup>1</sup>College of Electronics and Information Engineering, Shenzhen University, Shenzhen, China
+Jiantao Xin, Wensen Xu, Yucheng Cai, Taotao Wang, Shengli Zhang (College of Electronics and Information Engineering, Shenzhen University, Shenzhen, China)
 
 
 
