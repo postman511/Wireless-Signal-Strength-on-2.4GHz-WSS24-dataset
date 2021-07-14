@@ -131,7 +131,7 @@ Some of the original samples have been uploaded to this github repository, such 
  https://emailszueducn-my.sharepoint.com/:f:/g/personal/2176269105_email_szu_edu_cn/EkXCLxigvhFDiUFDhT-6YkwBGAAgLr4XBOezZxABJ9RXXw
 
 ## Acknowledgements
-We are grateful to Huawei's 2012 Labs for providing us with technical support and Shenzhen Baoan International Airport for providing us with a test site.
+We are grateful to Shenzhen Baoan International Airport for providing us with a test site.
 
 ## Publications
 
@@ -141,13 +141,12 @@ More than our own work, we are excited about *others* using our dataset for scie
 
 * AI-Aided Channel Quality Assessment for Bluetooth Adaptive Frequency Hopping (IEEE PIMRC 2021.)
 
-## Contributors
+## Project Team
 
-Jiantao Xin<sup>1</sup>, Wensen Xu<sup>1</sup>, Yucheng Cai<sup>1</sup>, Taotao Wang<sup>1</sup>, Shengli Zhang<sup>1</sup>, Peng Liu<sup>2</sup>, Ziyang Guo<sup>2</sup>, Jiajun Luo<sup>2</sup>
-
+Jiantao Xin<sup>1</sup>, Wensen Xu<sup>1</sup>, Yucheng Cai<sup>1</sup>, Taotao Wang<sup>1</sup>, Shengli Zhang<sup>1</sup>
 <sup>1</sup>College of Electronics and Information Engineering, Shenzhen University, Shenzhen, China
 
-<sup>2</sup>Wireless Technology Lab, 2012 Laboratories, Huawei, China.  
+
 
 ## Contact Us
 * Email: ttwang@szu.edu.cn
