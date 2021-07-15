@@ -2,7 +2,9 @@
 
 
 ## Overview
-Today, there are strong research interests on applying data-driven machine learning (ML) approaches to design new MAC protocols for wireless networks. However, most of the existing designs used simulations to generate "man-made" wireless data to feed their constructed ML models. Therefore, it is hard to predict the performances of these ML models in real wireless networks. To fill this gap, we build this dataset called WSS24 that contains real wireless data sampled from the 2.4 GHz frequency band. Our aim is to make this dataset a good database for researchers who want to try data-driven ML on real wireless data while spending minimal efforts on collecting the data. And we believe that this dataset of real wireless data is very helpful to evaluate the effectiveness of data-driven ML approaches in real wireless networks and thus it is helpful to guide the design of wireless MACs using data-driven ML approaches. The procedure of collecting the raw wireless data is described in this part. Since the signal-to-interference-plus-noise ratio (SINR) is a common indicator of the wireless channel quality, it is often used as an evidence for the actions in wireless PHY and MAC layers. In our project, we adopt an accessible link metric, i.e., the received signal strength indicator (RSSI) that can be served as a proxy for the real SINR. We used Ellisys Bluetooth Vanguard spectrum analyzer (BV1) to capture and measure RSSI values on the 2.4GHz frequency band. The sampling interval we set is 100us and the sampling duration time is 5 minutes. The sampling was performed on each 1MHz band from 2.401GHz to 2.483GHz. 
+Today, there are strong research interests on applying data-driven machine learning (ML) approaches to design new MAC protocols for wireless networks. However, most of the existing designs used simulations to generate "man-made" wireless data to feed their constructed ML models. Therefore, it is hard to predict the performances of these ML models in real wireless networks. To fill this gap, we build this dataset called WSS24 that contains real wireless data sampled from the 2.4 GHz frequency band. Our aim is to make this dataset a good database for researchers who want to try data-driven ML on real wireless data while spending minimal efforts on collecting the data. And we believe that this dataset of real wireless data is very helpful to evaluate the effectiveness of data-driven ML approaches in real wireless networks and thus it is helpful to guide the design of wireless MACs using data-driven ML approaches. 
+
+The procedure of collecting the raw wireless data is described as follows. Since the signal-to-interference-plus-noise ratio (SINR) is a common indicator of the wireless channel quality, it is often used as an evidence for the actions in wireless PHY and MAC layers. In our project, we adopt an accessible link metric, i.e., the received signal strength indicator (RSSI) that can be served as a proxy for the real SINR. We used Ellisys Bluetooth Vanguard spectrum analyzer (BV1) to capture and measure RSSI values on the 2.4GHz frequency band. The sampling interval we set is 100us and the sampling duration time is 5 minutes. The sampling was performed on each 1MHz band from 2.401GHz to 2.483GHz. 
 
 We conducted data sampling at two different indoor scenarios, i.e., our Lab at Shenzhen University and the check-in hall at the terminal 4 of Shenzhen Bao’an International Airport. Fig. 1 and 2 show the layouts of the two wireless sampling scenarios, respectively. In our Lab, there are 12 APs and 8 BT/BLE devices deployed and we used BV1 to sample RSSI at the sensor position, as shown in Fig. 1. At the airport terminal hall, we directly sampled RSSI at 5 locations, i.e., check-in counters B, D, E, G, and the lounge, as shown in Fig. 2. Note that, when we used BV1 to sample the raw RSSI data on the 2.4GHz frequency band at the airport, the collected raw data will include all potential signals from the wireless networks working on this band at the airport. Fig. 3 presents our sampling equipment. The sampled raw data are saved as CSV files that can be downloaded from the project page at GitHub.
 
@@ -10,14 +12,14 @@ We conducted data sampling at two different indoor scenarios, i.e., our Lab at S
 
 
 <p align="center">
-Fig. 1 The layout of our Lab at Shenzhen University
+Fig. 1 The layout of our Lab at Shenzhen University.
 </p>
 
 
 <div align=center><img src="picture/airport.png" /></div>
 
 <p align="center">
-    Fig. 2 The layout of the check-in hall at Shenzhen Baoan International Airport
+    Fig. 2 The layout of the check-in hall at Shenzhen Baoan International Airport.
 </p>
 
 
@@ -25,7 +27,7 @@ Fig. 1 The layout of our Lab at Shenzhen University
 <div align=center><img src="picture/device.png"  /></div>
 
 <p align="center">
-    Fig. 3 Photograph of the used sampling equipment
+    Fig. 3 The photograph of the used sampling equipment.
 </p>
 
 
@@ -45,7 +47,7 @@ where RSSI<sub>f<sub>n</sub>, t<sub>e</sub></sub>is the (*n,e*)-th entry of the 
 <div align=center><img src="picture/rssi.png" /></div>
 
 <p align="center">
-    Fig. 4 The measured RSSI in 0.1 second at Shenzhen Baoan International Airport
+    Fig. 4 The measured RSSI in 0.1 second at Shenzhen Baoan International Airport.
 </p>
 
 
@@ -68,7 +70,7 @@ After the time-domain data processing, we also have frequency-domain data proces
 
 
 <p align="center">
-    Fig. 5 The illustration of interpolating RSSI values o the 83sub-bands into the 13 Wi-Fi channels.
+    Fig. 5 The illustration for interpolating the RSSI values on the 83sub-bands into the 13 Wi-Fi channels.
 </p>
 
 We perform down-sampling via average interpolation with a down-sampling factor of 23. Consider channel 6 as an example. The 2.437GHz is the center frequency of channel 6 that occupies the 23 sub-bands from 2.426GHz to 2.448GHz (f<sub>25</sub>,· · · , f<sub>47</sub>). We calculate the average of the RSSI values sampled from these 23 sub-bands as the interpolated RSSI value of channel 1. In particular, we can express the interpolated RSSI of channel m at time t<sub>e</sub> as
@@ -89,62 +91,62 @@ After processing the data, we obtained a two-dimensional RSSI matrix given by (6
 <div align=center><img src="picture/B.png" /></div>
 
 <p align="center">
-      Fig. 6 The RSSI heat map of data sampled at counter B of the airport
+      Fig. 6 The RSSI heat map of the data sampled at counter B of the airport.
   </p>
 
 <div align=center><img src="picture/D.png" /></div>
 
 
 <p align="center">
-      Fig. 7 The RSSI heat map of data sampled at counter D of the airport
+      Fig. 7 The RSSI heat map of the data sampled at counter D of the airport.
   </p>
 
 <div align=center><img src="picture/E.png" /></div>
 
 <p align="center">
-      Fig. 8 The RSSI heat map of data sampled at counter E of the airport
+      Fig. 8 The RSSI heat map of the data sampled at counter E of the airport.
   </p>										
 
 <div align=center><img src="picture/G.png" /></div>
 
 <p align="center">
-    Fig. 9 The RSSI heat map of data sampled at counter G of the airport
+    Fig. 9 The RSSI heat map of the data sampled at counter G of the airport.
   </p>
 
 <div align=center><img src="picture/Lounge.png" /></div>
 
 <p align="center">
-      Fig. 10 The RSSI heat map of data sampled at VIP Lounge of the airport
+      Fig. 10 The RSSI heat map of the data sampled at VIP Lounge of the airport.
   </p>
 
 <div align=center><img src="picture/Lab.png" /></div>
 
 
 <p align="center">
-      Fig. 11 The RSSI heat map of data sampled at Laboratory
+      Fig. 11 The RSSI heat map of the data sampled at our Laboratory.
   </p>
 
 From these heat maps, we can observe that at the airport, the Wi-Fi channels were always occupied by wireless signals and there are not too many free time slots for all Wi-Fi channels; in contrast, at our Lab, there are many free time slots that are not occupied by wireless signals for some Wi-Fi channels, which is due to the fact that the number of wireless devices used in the Lab is far less than that in the airport. .
 
 ## Download
 
-Some of the original samples have been uploaded to this github repository, such as B.csv, C.csv, D.csv and G.csv. The remaining data need to be downloaded from the web site.
- https://emailszueducn-my.sharepoint.com/:f:/g/personal/2176269105_email_szu_edu_cn/EkXCLxigvhFDiUFDhT-6YkwBGAAgLr4XBOezZxABJ9RXXw
+Some of the original samples have been uploaded to this github repository, such as B.csv, C.csv, D.csv and G.csv. The remaining data need to be downloaded from the following link: 
+https://emailszueducn-my.sharepoint.com/:f:/g/personal/2176269105_email_szu_edu_cn/EkXCLxigvhFDiUFDhT-6YkwBGAAgLr4XBOezZxABJ9RXXw
 
 ## Acknowledgements
-We are grateful to Shenzhen Baoan International Airport for providing us with a test site.
+We are grateful to Shenzhen Baoan International Airport for providing us with the test site.
 
 ## Publications
 
 More than our own work, we are excited about *others* using our dataset for scientific research. We are proud to list the following published papers using our data.
 
-* [Deep Learning for Intelligent Wireless MAC: Exploiting Real Data Sampled on 2.4GHz Frequency Band](https://arxiv.org/pdf/2106.10307.pdf)
+* Deep Learning for Intelligent Wireless MAC: Exploiting Real Data Sampled on 2.4GHz Frequency Band, https://arxiv.org/pdf/2106.10307.pdf, 2021.
 
-* AI-Aided Channel Quality Assessment for Bluetooth Adaptive Frequency Hopping (IEEE PIMRC 2021.)
+* AI-Aided Channel Quality Assessment for Bluetooth Adaptive Frequency Hopping, IEEE PIMRC 2021.
 
 ## Project Team
 
-Jiantao Xin, Wensen Xu, Yucheng Cai, Taotao Wang, Shengli Zhang (College of Electronics and Information Engineering, Shenzhen University, Shenzhen, China)
+Dr. Taotao Wang, Mr. Jiantao Xin, Mr. Wensen Xu, Mr. Yucheng Cai, Dr. Shengli Zhang (College of Electronics and Information Engineering, Shenzhen University, Shenzhen, China)
 
 
 
