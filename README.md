@@ -126,7 +126,7 @@ After processing the data, we obtained a two-dimensional RSSI matrix given by (6
       Fig. 11 The RSSI heat map of the data sampled at our Laboratory.
   </p>
 
-From these heat maps, we can observe that at the airport, the Wi-Fi channels were always occupied by wireless signals and there are not too many free time slots for all Wi-Fi channels; in contrast, at our Lab, there are many free time slots that are not occupied by wireless signals for some Wi-Fi channels, which is due to the fact that the number of wireless devices used in the Lab is far less than that in the airport. .
+From these heat maps, we can observe that at the airport, the Wi-Fi channels were always occupied by wireless signals and there are not too many free time slots for all Wi-Fi channels; in contrast, at our Lab, there are many free time slots that are not occupied by wireless signals for some Wi-Fi channels, which is due to the fact that the number of wireless devices used in the Lab is far less than that in the airport. 
 
 ## Download
 
