@@ -59,7 +59,7 @@ First, we deal with the RSSI samples in the time domain. The time length of one 
 
 <div align=center><img src="picture/3.png" /></div>
 
-where t' is the time index of the interpolated RSSI between the RSSI samples at time f<sub>e</sub> and f<sub>e+1</sub>, and RSSI'<sub>f<sub>n</sub>,t'</sub> is the result of interpolation at t' on sub-band f<sub>n</sub>.
+where t' is the time index of the interpolated RSSI between the RSSI samples at time f<sub>n</sub> and f<sub>n+1</sub>, and RSSI'<sub>f<sub>n</sub>,t'</sub> is the result of interpolation at t' on sub-band f<sub>n</sub>.
 
 After the time-domain data processing, we also have frequency-domain data processing. There are 14 overlapping and staggered channels on the 2.4GHz frequency band, and the first 13 channels are widely used in most parts of the world. Therefore, we only consider the first 13 channels in dataset. Similarly, we need to interpolate RSSI values on sub-bands into the M = 13 Wi-Fi channels, as shown in Fig. 5. The m-th channel’s center frequency of Wi-Fi networks can be written as
 
