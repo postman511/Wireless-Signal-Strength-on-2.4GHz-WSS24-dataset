@@ -130,9 +130,8 @@ From these heat maps, we can observe that at the airport, the Wi-Fi channels wer
 
 ## Download
 
-Some of the original samples have been uploaded to this github repository, such as B.csv, C.csv, D.csv and G.csv. The remaining data need to be downloaded from the following link: 
+Some of the original samples have been uploaded to this github repository, such as B.csv, C.csv, D.csv and G.csv. The remaining data need to be downloaded from the following link(On October 23, 2021, we collected latest raw RSSI data in shenzhen University Library and Coastal City Shopping Center in Nanshan District, Shenzhen, and now we have uploaded the data to the network disk.): 
 https://emailszueducn-my.sharepoint.com/:f:/g/personal/2176269105_email_szu_edu_cn/EkXCLxigvhFDiUFDhT-6YkwBGAAgLr4XBOezZxABJ9RXXw
-(On October 23, 2021, we collected latest raw RSSI data in shenzhen University Library and Coastal City Shopping Center in Nanshan District, Shenzhen, and now we have uploaded the data to the network disk.)
 
 ## Acknowledgements
 We are grateful to Shenzhen Baoan International Airport for providing us with the test site.
