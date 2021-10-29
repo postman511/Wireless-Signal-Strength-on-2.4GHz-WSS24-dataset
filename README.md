@@ -42,7 +42,7 @@ We can collect the raw data by sampling the RSSI on each sub-band with an equal 
 
 <div align=center><img src="picture/2.png" /></div>
 
-where RSSI<sub>f<sub>n</sub>, t<sub>e</sub></sub>is the (*n,e*)-th entry of the raw RSSI matrix, f<sub>0</sub> is the sampling starting time,   t<sub>e</sub> = t<sub>0</sub> + T<sub>s</sub>k, k = 0,1, ... , L is the e-th sampling time, and  f<sub>i</sub> represents the *i*-th sub-band. Fig. 4 presents the measured RSSI in 0.1 second at Shenzhen Baoan International Airport.
+where RSSI<sub>f<sub>n</sub>, t<sub>e</sub></sub>is the (*n,e*)-th entry of the raw RSSI matrix, t<sub>0</sub> is the sampling starting time,   t<sub>e</sub> = t<sub>0</sub> + T<sub>s</sub>e, e = 0,1, ... , L is the e-th sampling time, and  f<sub>n</sub> represents the *n*-th sub-band. Fig. 4 presents the measured RSSI in 0.1 second at Shenzhen Baoan International Airport.
 
 <div align=center><img src="picture/rssi.png" /></div>
 
@@ -53,7 +53,7 @@ where RSSI<sub>f<sub>n</sub>, t<sub>e</sub></sub>is the (*n,e*)-th entry of the 
 
 ## Data Processing
 
-The raw data contains a very large amount of channel information, but in order to use the data in a more targeted way, we need to process the data.
+The raw RSSI data is sampled on all frequencies of the 2.4GHz frequency band, thus we need to preprocess the data to the available channels of the Wi-Fi network. 
 
 First, we deal with the RSSI samples in the time domain. The time length of one RSSI sample is T<sub>s</sub> = 100µs, but the time length of one mini-slot in the CSMA/CA protocol of Wi-Fi networks is T<sub>slot</sub> = 100µs. To align with the time units of CSMA/CA and our data, we perform up-sampling via the linear interpolation with an up-sampling factor T<sub>s</sub>/T<sub>slot</sub> ≈ 11. In particular, the RSSI interpolation on sub-band f<sub>n</sub> given by
 
